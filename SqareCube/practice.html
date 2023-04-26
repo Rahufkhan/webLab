@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,tr,th{
+            border: 1px solid black;
+
+        }
+    </style>
+</head>
+<body>
+    <button>Initial Value</button>
+    <button>Final Value</button>
+    <button onclick="submit()">Submit</button>
+    <table>
+        <tr>
+            <th>Numbers</th>
+            <th>Sqares</th>
+            <th>Cubes</th>
+        </tr>
+    </table>
+    <script>
+        function submit(){
+            for(let i=0; i<=10; i++){
+                let content=document.querySelector('table');
+                let tr=document.createElement('tr');
+                for(let j=0; j<3; j++){
+                    let td=document.createElement('td');
+                    td.innerHTML=i;
+                    tr.appendChild(td);
+                }
+                content.appendChild(tr);
+                console.log(tr)
+            }
+        }
+    </script>
+</body>
+</html>

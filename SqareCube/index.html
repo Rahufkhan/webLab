@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suqare And Cube Roots</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse:collapse;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Number</th>
+            <th>Sqares</th>
+            <th>Cubes</th>
+        </tr>
+        <button onclick="setStart()">Set Starting Value</button>
+        <button onclick="setEnd()">Set ending Value</button>
+        <button onclick="submit()">Submit</button>
+        <button id="clear">Clear</button>
+    </table>
+    <script>
+        var start;
+        var end;
+        function setStart(){
+            start= prompt('Set Starting Value:');
+        }
+        function setEnd(){
+            end= prompt('Set Ending Value:');
+        }
+        function submit(){
+            for(let i=start; i<=end; i++){
+            let content=document.querySelector('table');
+            let tr=document.createElement('tr');
+                for(let j=0; j<3; j++){
+                    let td=document.createElement('td');
+                    if(j==0){
+                        td.appendChild(document.createTextNode(i));
+                        tr.appendChild(td);
+                    }
+                    else if(j==1){
+                        td.appendChild(document.createTextNode(i*i));
+                        tr.appendChild(td); 
+                    }
+                    else if(j==2){
+                        td.appendChild(document.createTextNode(i*i*i));
+                        tr.appendChild(td); 
+                    }
+                    
+                }
+            content.appendChild(tr);
+            console.log(tr);
+            var clear = document.getElementById("clear");
+
+            clear.onclick=function(){
+                content.removeChild(content);
+            }
+
+            }
+        }
+        
+    </script>
+</body>
+</html>
